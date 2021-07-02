@@ -15,6 +15,29 @@ You need to add a reference to <b>Microsoft XML v6.0</b> as follows:
 1. In the VBA Editor, navigate to Tools > References.
 2. In the References window, add a check to the checkbox for Microsoft XML v6.0.
 
+# VBA
+
+<code>
+ Function GetCitation(str_doi_url As String) As String
+' get citation from DOI url
+
+    Dim xml As MSXML2.XMLHTTP60
+    Dim result As String
+    
+    Set xml = CreateObject("MSXML2.ServerXMLHTTP.6.0")
+    
+    ' get
+    With xml
+      .Open "GET", str_doi_url, False
+      .setRequestHeader "Accept", "text/x-bibliography; style=apa; locale=en-US"
+      .send
+    End With
+    
+    GetCitation = xml.responseText
+
+End Function
+</code>
+
 # Workbook
 
 Personally, I used this function to really speed up my documentation of references during research. See <code>example.xlsm</code>.
