@@ -44,6 +44,10 @@ Personally, I used this function to really speed up my documentation of referenc
 
 You'll see that the workbook also provides the narrative and parenthetical citations (which properly account for any number of authors) as well!
 
+# Knowledge
+* Excel VBA
+* HTTP requests
+
 # Warnings
 
 * Since the VBA is making a request every time the cell is calculated, I'd recommend that you enter the formula, get the results, and then copy and paste as values to save the results.
